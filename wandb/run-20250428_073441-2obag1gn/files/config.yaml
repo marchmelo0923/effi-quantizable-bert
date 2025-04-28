@@ -1,0 +1,158 @@
+_wandb:
+    value:
+        cli_version: 0.19.10
+        m: []
+        python_version: 3.11.10
+        t:
+            "1":
+                - 1
+                - 11
+                - 41
+                - 49
+                - 51
+                - 55
+                - 71
+            "2":
+                - 1
+                - 11
+                - 41
+                - 49
+                - 51
+                - 55
+                - 71
+            "3":
+                - 23
+                - 55
+            "4": 3.11.10
+            "5": 0.19.10
+            "6": 4.51.3
+            "8":
+                - 5
+            "12": 0.19.10
+            "13": linux-x86_64
+alpha:
+    value: null
+attn_dropout:
+    value: null
+attn_softmax:
+    value: clipped_gamma
+block_size:
+    value: null
+checkpointing_steps:
+    value: "100000"
+config_name:
+    value: bert-base-uncased
+config_path:
+    value: null
+data_cache_dir:
+    value: /SSD/LSY/Quantizable_transformer/dataset
+dataset_setup:
+    value: bookcorpus_and_wiki
+est_num_batches:
+    value: 1
+extra_tb_stats:
+    value: true
+final_lr_fraction:
+    value: 0
+fine_tuning:
+    value: false
+gamma:
+    value: -0.25
+grad_norm_type:
+    value: 2
+gradient_accumulation_steps:
+    value: 1
+hidden_dropout:
+    value: null
+learning_rate:
+    value: 0.0001
+log_name:
+    value: BERT-pretrain
+low_cpu_mem_usage:
+    value: false
+lr_scheduler_type:
+    value: linear
+max_grad_norm:
+    value: 1
+max_seq_length:
+    value: 128
+max_train_steps:
+    value: 1000000
+mlm_probability:
+    value: 0.15
+model_cache_dir:
+    value: /SSD/LSY/Quantizable_transformer/model
+model_name_or_path:
+    value: null
+model_type:
+    value: bert
+n_bits:
+    value: 8
+n_bits_act:
+    value: 8
+no_act_quant:
+    value: false
+no_weight_quant:
+    value: false
+num_train_epochs:
+    value: 10
+num_warmup_steps:
+    value: 10000
+output_dir:
+    value: /NAS/LSY/quant_transformer/output
+overwrite_cache:
+    value: false
+pad_to_max_length:
+    value: false
+per_device_eval_batch_size:
+    value: 256
+per_device_train_batch_size:
+    value: 256
+percentile:
+    value: null
+preprocessing_num_workers:
+    value: 12
+qmethod_acts:
+    value: asymmetric_uniform
+quant_setup:
+    value: all
+quantize:
+    value: false
+ranges_acts:
+    value: running_minmax
+ranges_weights:
+    value: minmax
+report_to:
+    value: all
+resume_from_checkpoint:
+    value: null
+seed:
+    value: 1000
+skip_attn:
+    value: false
+tb_hist_log_interval:
+    value: 100000
+tb_scalar_log_interval:
+    value: 2000
+tokenizer_name:
+    value: bert-base-uncased
+tqdm_update_interval:
+    value: 100
+train_percentage:
+    value: null
+use_mlp_gating:
+    value: false
+use_slow_tokenizer:
+    value: false
+validation_percentage:
+    value: null
+wandb_entity:
+    value: marchmelo0923-postech
+wd_LN_gamma:
+    value: false
+weight_decay:
+    value: 0.01
+with_tracking:
+    value: true
+zeta:
+    value: 1

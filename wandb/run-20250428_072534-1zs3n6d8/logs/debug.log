@@ -1,0 +1,24 @@
+2025-04-28 07:25:35,009 INFO    MainThread:80616 [wandb_setup.py:_flush():68] Current SDK version is 0.19.10
+2025-04-28 07:25:35,009 INFO    MainThread:80616 [wandb_setup.py:_flush():68] Configure stats pid to 80616
+2025-04-28 07:25:35,009 INFO    MainThread:80616 [wandb_setup.py:_flush():68] Loading settings from /root/.config/wandb/settings
+2025-04-28 07:25:35,009 INFO    MainThread:80616 [wandb_setup.py:_flush():68] Loading settings from /NAS/LSY/quant_transformer/wandb/settings
+2025-04-28 07:25:35,009 INFO    MainThread:80616 [wandb_setup.py:_flush():68] Loading settings from environment variables
+2025-04-28 07:25:35,009 INFO    MainThread:80616 [wandb_init.py:setup_run_log_directory():724] Logging user logs to /NAS/LSY/quant_transformer/wandb/run-20250428_072534-1zs3n6d8/logs/debug.log
+2025-04-28 07:25:35,009 INFO    MainThread:80616 [wandb_init.py:setup_run_log_directory():725] Logging internal logs to /NAS/LSY/quant_transformer/wandb/run-20250428_072534-1zs3n6d8/logs/debug-internal.log
+2025-04-28 07:25:35,009 INFO    MainThread:80616 [wandb_init.py:init():852] calling init triggers
+2025-04-28 07:25:35,009 INFO    MainThread:80616 [wandb_init.py:init():857] wandb.init called with sweep_config: {}
+config: {'_wandb': {}}
+2025-04-28 07:25:35,009 INFO    MainThread:80616 [wandb_init.py:init():893] starting backend
+2025-04-28 07:25:35,009 INFO    MainThread:80616 [wandb_init.py:init():897] sending inform_init request
+2025-04-28 07:25:35,030 INFO    MainThread:80616 [backend.py:_multiprocessing_setup():101] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2025-04-28 07:25:35,030 INFO    MainThread:80616 [wandb_init.py:init():907] backend started and connected
+2025-04-28 07:25:35,062 INFO    MainThread:80616 [wandb_init.py:init():1002] updated telemetry
+2025-04-28 07:25:35,101 INFO    MainThread:80616 [wandb_init.py:init():1026] communicating run to backend with 90.0 second timeout
+2025-04-28 07:25:36,116 INFO    MainThread:80616 [wandb_init.py:init():1101] starting run threads in backend
+2025-04-28 07:25:36,288 INFO    MainThread:80616 [wandb_run.py:_console_start():2566] atexit reg
+2025-04-28 07:25:36,288 INFO    MainThread:80616 [wandb_run.py:_redirect():2414] redirect: wrap_raw
+2025-04-28 07:25:36,288 INFO    MainThread:80616 [wandb_run.py:_redirect():2483] Wrapping output streams.
+2025-04-28 07:25:36,288 INFO    MainThread:80616 [wandb_run.py:_redirect():2506] Redirects installed.
+2025-04-28 07:25:36,300 INFO    MainThread:80616 [wandb_init.py:init():1147] run started, returning control to user process
+2025-04-28 07:25:36,301 INFO    MainThread:80616 [wandb_run.py:_config_callback():1429] config_cb None None {'seed': 1000, 'preprocessing_num_workers': 12, 'overwrite_cache': False, 'model_type': 'bert', 'model_name_or_path': None, 'config_name': 'bert-base-uncased', 'tokenizer_name': 'bert-base-uncased', 'use_slow_tokenizer': False, 'pad_to_max_length': False, 'max_seq_length': 128, 'block_size': None, 'mlm_probability': 0.15, 'per_device_train_batch_size': 256, 'per_device_eval_batch_size': 256, 'learning_rate': 0.0001, 'lr_scheduler_type': 'linear', 'num_train_epochs': 10, 'max_train_steps': 1000000, 'num_warmup_steps': 10000, 'gradient_accumulation_steps': 1, 'weight_decay': 0.01, 'output_dir': '/NAS/LSY/quant_transformer/output', 'checkpointing_steps': '100000', 'resume_from_checkpoint': None, 'with_tracking': True, 'extra_tb_stats': True, 'report_to': 'all', 'wandb_entity': 'marchmelo0923-postech', 'log_name': 'BERT-pretrain', 'low_cpu_mem_usage': False, 'dataset_setup': 'bookcorpus_and_wiki', 'data_cache_dir': '/SSD/LSY/Quantizable_transformer/dataset', 'train_percentage': None, 'validation_percentage': None, 'config_path': None, 'model_cache_dir': '/SSD/LSY/Quantizable_transformer/model', 'final_lr_fraction': 0.0, 'tqdm_update_interval': 100, 'max_grad_norm': 1.0, 'grad_norm_type': 2.0, 'attn_dropout': None, 'hidden_dropout': None, 'tb_scalar_log_interval': 2000, 'tb_hist_log_interval': 100000, 'wd_LN_gamma': False, 'skip_attn': False, 'attn_softmax': 'clipped_gamma', 'gamma': -0.25, 'alpha': None, 'zeta': 1.0, 'use_mlp_gating': False, 'quantize': False, 'est_num_batches': 1, 'n_bits': 8, 'n_bits_act': 8, 'no_weight_quant': False, 'no_act_quant': False, 'qmethod_acts': 'asymmetric_uniform', 'ranges_weights': 'minmax', 'ranges_acts': 'running_minmax', 'percentile': None, 'quant_setup': 'all', 'fine_tuning': False}
+2025-04-28 07:25:36,592 INFO    MsgRouterThr:80616 [mailbox.py:close():129] [no run ID] Closing mailbox, abandoning 1 handles.

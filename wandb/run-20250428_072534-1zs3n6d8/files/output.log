@@ -1,0 +1,25 @@
+04/28/2025 07:25:36 - INFO - run_mlm - ***** Running training *****
+04/28/2025 07:25:36 - INFO - run_mlm -   Num examples = 25718365
+04/28/2025 07:25:36 - INFO - run_mlm -   Num Epochs = 10
+04/28/2025 07:25:36 - INFO - run_mlm -   Instantaneous batch size per device = 256
+04/28/2025 07:25:36 - INFO - run_mlm -   Total train batch size (w. parallel, distributed & accumulation) = 256
+04/28/2025 07:25:36 - INFO - run_mlm -   Gradient Accumulation steps = 1
+04/28/2025 07:25:36 - INFO - run_mlm -   Total optimization steps = 1000000
+  0%|                                                                                                                                                                                           | 0/1000000 [00:00<?, ?it/s]Traceback (most recent call last):
+  File "/NAS/LSY/quant_transformer/run_mlm.py", line 756, in <module>
+    main()
+  File "/NAS/LSY/quant_transformer/run_mlm.py", line 551, in main
+    num_layers = len(model.bert.encoder.layer)
+                     ^^^^^^^^^^
+  File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1931, in __getattr__
+    raise AttributeError(
+AttributeError: 'DistributedDataParallel' object has no attribute 'bert'
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/NAS/LSY/quant_transformer/run_mlm.py", line 756, in <module>
+[rank0]:     main()
+[rank0]:   File "/NAS/LSY/quant_transformer/run_mlm.py", line 551, in main
+[rank0]:     num_layers = len(model.bert.encoder.layer)
+[rank0]:                      ^^^^^^^^^^
+[rank0]:   File "/opt/conda/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1931, in __getattr__
+[rank0]:     raise AttributeError(
+[rank0]: AttributeError: 'DistributedDataParallel' object has no attribute 'bert'
