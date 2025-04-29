@@ -18,16 +18,17 @@ accelerate launch --config_file accelerate_configs/1gpu_fp16.yaml run_mlm.py \
 --lr_scheduler_type linear \
 --max_train_steps 1000000 \
 --num_warmup_steps 10000 \
---per_device_train_batch_size 256 \
---per_device_eval_batch_size 256 \
+--per_device_train_batch_size 128 \
+--per_device_eval_batch_size 128 \
 --gradient_accumulation_steps 1 \
 --max_grad_norm 1.0 \
 --weight_decay 0.01 \
 --config_name bert-base-uncased \
 --checkpointing_steps 100000 \
---tb_scalar_log_interval 2000 \
---tb_hist_log_interval 100000 \
+--tb_scalar_log_interval 200 \
+--tb_hist_log_interval 200 \
 --attn_softmax "clipped_gamma" \
 --gamma -0.25 \
 --zeta 1 \
+--checkpointing_steps 100000 \
 --output_dir /NAS/LSY/quant_transformer/output
