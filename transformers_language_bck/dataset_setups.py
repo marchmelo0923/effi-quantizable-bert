@@ -1,6 +1,6 @@
 # Copyright (c) 2023 Qualcomm Technologies, Inc.
 # All Rights Reserved.
-from enum import auto, Flag
+from enum import Flag, auto
 
 class BaseEnumOptions(Flag):
     def __str__(self):
