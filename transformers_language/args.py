@@ -5,11 +5,10 @@ import argparse
 from transformers import MODEL_MAPPING, SchedulerType
 
 from transformers_language.dataset_setups import DatasetSetups
-
-# NOTE: currently we don't need to replace the Self-attention module
-
 # from transformers_language.models.bert_attention import AttentionGateType
 # from transformers_language.models.softmax import SOFTMAX_MAPPING
+
+
 
 MODEL_CONFIG_CLASSES = list(MODEL_MAPPING.keys())
 MODEL_TYPES = tuple(conf.model_type for conf in MODEL_CONFIG_CLASSES)
@@ -345,49 +344,70 @@ def parse_args():
         help="Skip attention (don't update the residual).",
     )
 
-    # NOTE: currently we don't need to replace the Self-attention module
+    #####################################################
+    # LSY) Our new arguments for quantizable transformer
+    #####################################################
+
+    parser.add_argument(
+        "--attn_softmax",
+        type=str,
+        default="vanilla",
+        help="Softmax variation to use in attention module.",
+        choices=['vanilla', 'clipped_gamma', 'clipped_alpha'],
+    )
+    parser.add_argument(
+        "--gamma",
+        type=float,
+        default=None,
+        help="If specified, use clipped softmax gamma only",
+    )
+    parser.add_argument(
+        "--alpha",
+        type=float,
+        default=None,
+        help="If specified, use clipped softmax gamma = -alpha / seq_length.",
+    )
+    parser.add_argument(
+        "--zeta",
+        type=float,
+        default=None,
+        help="Should be specified, if you use clipped softmax",
+    )
+
+    parser.add_argument(
+        "--use_mlp_gating",
+        type=bool,
+        default=False,
+        help="Quantizable Transformer- Use mlp gating"
+    )
+
+    #####################################################
+    # LSY) Our new arguments for quantizable transformer - end
+    #####################################################
+
+    # NOTE ) 'attn_gate_init' maybe used in 'large model' gated_attention cases.
 
     # parser.add_argument(
-    #     "--attn_softmax",
-    #     type=str,
-    #     default="vanilla",
-    #     help="Softmax variation to use in attention module.",
-    #     choices=SOFTMAX_MAPPING.keys(),
-    # )
-    # parser.add_argument(
-    #     "--alpha",
+    #     "--attn_gate_init",
     #     type=float,
-    #     default=None,
-    #     help="If specified, use clipped softmax gamma = -alpha / seq_length.",
+    #     default=0.5,
+    #     help="init bias s.t. the gate prob is approx this value",
     # )
     # parser.add_argument(
-    #     "--attn_gate_type",
-    #     type=str,
-    #     default=AttentionGateType.none.name,
-    #     help="The type of gating to use for the self-attention.",
-    #     choices=AttentionGateType.list_names(),
+    #     "--attn_gate_mlp",
+    #     action="store_true",
+    #     help="Use MLP instead of single linear layer to predict the gate.",
     # )
-    parser.add_argument(
-        "--attn_gate_init",
-        type=float,
-        default=0.5,
-        help="init bias s.t. the gate prob is approx this value",
-    )
-    parser.add_argument(
-        "--attn_gate_mlp",
-        action="store_true",
-        help="Use MLP instead of single linear layer to predict the gate.",
-    )
-    parser.add_argument(
-        "--attn_gate_mlp2",
-        action="store_true",
-        help="Use bigger MLP instead of single linear layer to predict the gate.",
-    )
-    parser.add_argument(
-        "--attn_gate_linear_all_features",
-        action="store_true",
-        help="Use Linear (d_model -> n_heads) instead of n_heads Linear's (d_head -> 1).",
-    )
+    # parser.add_argument(
+    #     "--attn_gate_mlp2",
+    #     action="store_true",
+    #     help="Use bigger MLP instead of single linear layer to predict the gate.",
+    # )
+    # parser.add_argument(
+    #     "--attn_gate_linear_all_features",
+    #     action="store_true",
+    #     help="Use Linear (d_model -> n_heads) instead of n_heads Linear's (d_head -> 1).",
+    # )
 
     #
     ## Quantization
